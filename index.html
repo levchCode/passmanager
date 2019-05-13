@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+    <head>
+        <title>PassManager</title>
+        <script src="https://cdn.rawgit.com/CryptoStore/crypto-js/3.1.2/build/rollups/tripledes.js"></script>
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <div>
+            <h2>Select your .vlt file and enter your password</h2>
+
+            .vlt file <input type="file" id="secret" accept=".vlt" onchange="handleFile()" required>
+            <br>
+            <br>
+            Password <input type="password" id="pas" required>
+            <br>
+            <br>
+            <input type="button" value="Show my credentials" onclick="show()" id="open">
+        </div>
+        <br>
+        <div>
+                <h2>Your credentials</h2>
+                <p>If you haven't created a .vlt file, enter you data here. When finished, hit "Save and download .pass file" button </p>
+
+                <table border="1" id="creds">
+                </table>
+                <br>
+
+                Service <input type="text" id="name">
+                Login <input type="text" id="login">
+                Password <input type="text" id="pass">
+
+                <input type="button" value="Generate password" onclick="generateNewPassword()">
+                <br>
+                <br>
+                <input type="button" value="Add service" onclick="addEntry()">
+                <br>
+                <br>
+                <input type="button" value="Save and download .pass file" onclick="download('enc_ps.vlt')">
+        </div>
+    </body>
+</html>
